@@ -21,7 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#c-kftps6rc+a+x*g(-dx90+fr8gy^6wqgspu*0#poj4m_z0_i'
+# SECRET_KEY = 'django-insecure-#c-kftps6rc+a+x*g(-dx90+fr8gy^6wqgspu*0#poj4m_z0_i'
+SECRET_KEY = os.environ.get('BLOG_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -150,7 +151,7 @@ EMAIL_PORT = 587
 
 
 DEFAULT_FILE_STORAGE = 'custom_storage.custom_azure.AzureMediaStorage'
-# STATICFILES_STORAGE = 'custom_storage.custom_azure.AzureStaticStorage'
+STATICFILES_STORAGE = 'custom_storage.custom_azure.AzureStaticStorage'
 
 # MEDIA_LOCATION = "django-blog-files"
 
